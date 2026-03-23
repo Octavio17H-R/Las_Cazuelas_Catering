@@ -32,22 +32,6 @@ src/
 │── pages/         # Páginas principales
 │── App.jsx        # Configuración principal
 │── main.jsx       # Punto de entrada
-Menú
-
-Puedes elegir entre diferentes tipos de tacos:
-
-Bistec
-Pollo
-Pastor
-Adobada
-Carnitas
-Pollo con mole
-Tinga
-📸 Preview
-
-(Aquí puedes subir una imagen de tu página o un screenshot)
-
-🌐 Deploy
 
 Puedes subir este proyecto en:
 
