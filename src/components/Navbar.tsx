@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import logo from "@/assets/logo.png";
 const navLinks = [
-  { to: "/", label: "Inicio" },
-  { to: "/menu", label: "Menú" },
-  { to: "/servicios", label: "Servicios" },
+  { to: "/", label: "Home" },
+  { to: "/menu", label: "Menu" },
+  { to: "/servicios", label: "Services" },
 ];
 
 const Navbar = () => {
@@ -16,11 +16,16 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <Link to="/" className="font-display text-2xl font-bold text-primary">
-          Cazuelas Las
+        
+        {/* LOGO */}
+        <Link to="/" className="flex items-center">
+          <img
+            src={logo}
+            alt="Las Cazuelas logo"
+            className="h-16 w-auto"
+          />
         </Link>
-
-        {/* Desktop */}
+        {/* DESKTOP */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -33,17 +38,18 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
+
           <a
-            href="https://wa.me/1234567890?text=Hola%2C%20quiero%20cotizar%20un%20evento"
+            href="https://wa.me/12147135520?text=Hello%2C%20I%20would%20like%20to%20get%20a%20quote%20for%20an%20event"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-primary-foreground rounded-full px-6 py-2.5 font-body font-bold hover:scale-105 transition-transform"
           >
-            Cotizar
+            Get a Quote
           </a>
         </div>
 
-        {/* Mobile toggle */}
+        {/* MOBILE BUTTON */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-foreground"
@@ -53,7 +59,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -75,13 +81,14 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+
               <a
-                href="https://wa.me/1234567890?text=Hola%2C%20quiero%20cotizar%20un%20evento"
+                href="https://wa.me/12147135520?text=Hello%2C%20I%20would%20like%20to%20get%20a%20quote%20for%20an%20event"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-primary-foreground rounded-full px-6 py-3 font-body font-bold text-center"
               >
-                Cotizar
+                Get a Quote
               </a>
             </div>
           </motion.div>
