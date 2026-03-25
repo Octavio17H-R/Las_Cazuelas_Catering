@@ -32,29 +32,30 @@ const ServiciosPage = () => {
   return (
     <div className="pt-20">
 
-      {/* HERO */}
-          <section className="section-padding bg-chili text-primary-foreground relative overflow-hidden">
-  
-     {/* IMAGEN MITAD DERECHA */}
-      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${churrosImg})` }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-chili"></div>
+    {/* HERO */}
+    <section className="section-padding relative overflow-hidden text-primary-foreground">
+
+      {/* IMAGEN DE FONDO COMPLETA */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${churrosImg})` }}
+      ></div>
+
+      {/* OVERLAY (oscurecer para que se lea el texto) */}
+      <div className="absolute inset-0 bg-black/60"></div>
+
+      {/* CONTENIDO */}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="w-full lg:w-1/2 py-12">
+          <h1 className="font-display text-5xl md:text-6xl font-bold mb-4">
+            Services & Extras
+          </h1>
+          <p className="text-xl text-primary-foreground/80 max-w-lg">
+            Make your event unforgettable with our add-ons. From churros to DJs, we’ve got everything covered.
+          </p>
+        </div>
       </div>
 
-        {/* CONTENIDO */}
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="w-full lg:w-1/2 py-12">
-            <h1 className="font-display text-5xl md:text-6xl font-bold mb-4">
-              Services & Extras
-            </h1>
-            <p className="text-xl text-primary-foreground/80 max-w-lg">
-              Make your event unforgettable with our add-ons. From churros to DJs, we’ve got everything covered.
-            </p>
-          </div>
-        </div>
     </section>
 
       {/* SERVICES */}

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import tacosHero from "@/assets/Galeria/3.jpeg";
+import tacosHero from "@/assets/1.jpeg";
 import aguasFrescas from "@/assets/tacos.png";
 import a1 from "@/assets/Galeria/10.jpg";
 import a2 from "@/assets/Galeria/3.jpeg";
@@ -79,16 +79,16 @@ const MenuPage = () => {
   return (
     <div className="pt-20">
       {/* Hero */}
-    <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
-  
-     {/* IMAGEN MITAD DERECHA */}
-      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full">
+      <section className="section-padding relative overflow-hidden text-primary-foreground">
+
+        {/* IMAGEN DE FONDO COMPLETA */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${tacosHero})` }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-primary"></div>
-      </div>
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
 
         {/* CONTENIDO */}
         <div className="max-w-7xl mx-auto relative z-10">
@@ -101,7 +101,8 @@ const MenuPage = () => {
             </p>
           </div>
         </div>
-    </section>
+
+      </section>
       {/* Menu Grid */}
       <section className="section-padding">
         <div className="max-w-7xl mx-auto">
@@ -181,9 +182,15 @@ const MenuPage = () => {
                   { emoji: "", label: "Decoration" },
                   { emoji: "", label: "2 hours of service" },
                 ].map((item) => (
-                  <div key={item.label} className="card-cazuela text-center py-8">
-                    <span className="text-4xl block mb-2">{item.emoji}</span>
-                    <span className="font-display font-bold text-lg">{item.label}</span>
+                  <div
+                    key={item.label}
+                    className="relative rounded-2xl p-[1px] bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 
+                              hover:scale-105 transition duration-300"
+                  >
+                    <div className="bg-white rounded-2xl p-6 text-center shadow-xl">
+                      <span className="text-4xl block mb-2">{item.emoji}</span>
+                      <span className="font-display font-bold text-lg">{item.label}</span>
+                    </div>
                   </div>
                 ))}
               </div>

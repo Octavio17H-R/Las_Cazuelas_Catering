@@ -157,6 +157,29 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      {/* 🎞️ CARRUSEL INFINITO */}
+    <section className="py-16 bg-black overflow-hidden">
+      <div className="relative w-full overflow-hidden">
+
+        <div className="flex gap-4 animate-scroll">
+
+          {/* DUPLICAMOS PARA LOOP */}
+          {[...galleryImages, ...galleryImages].map((img, i) => (
+            <div
+              key={i}
+              className="min-w-[300px] h-[200px] rounded-xl overflow-hidden shadow-lg"
+            >
+              <img
+                src={img}
+                className="w-full h-full object-cover hover:scale-110 transition duration-100"
+              />
+            </div>
+          ))}
+
+          </div>
+
+        </div>
+      </section>
 
       {/* FEATURES */}
       <section className="section-padding">
@@ -205,29 +228,7 @@ const HomePage = () => {
 
         </div>
       </section>
-{/* 🎞️ CARRUSEL INFINITO */}
-<section className="py-16 bg-black overflow-hidden">
-  <div className="relative w-full overflow-hidden">
 
-    <div className="flex gap-4 animate-scroll">
-
-      {/* DUPLICAMOS PARA LOOP */}
-      {[...galleryImages, ...galleryImages].map((img, i) => (
-        <div
-          key={i}
-          className="min-w-[300px] h-[200px] rounded-xl overflow-hidden shadow-lg"
-        >
-          <img
-            src={img}
-            className="w-full h-full object-cover hover:scale-110 transition duration-500"
-          />
-        </div>
-      ))}
-
-    </div>
-
-  </div>
-</section>
       {/* CTA */}
       <section className="section-padding bg-secondary text-center">
         <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
