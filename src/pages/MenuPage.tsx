@@ -10,6 +10,7 @@ import a5 from "@/assets/Galeria/6.jpeg";
 import a6 from "@/assets/Galeria/7.jpeg";
 import a7 from "@/assets/Galeria/8.jpeg";
 import a8 from "@/assets/Galeria/9.jpeg";
+import textura from "@/assets/textura.jpg"; // o cualquier textura tipo papel/madera
 
 
 const spring = { type: "spring" as const, stiffness: 300, damping: 20 };
@@ -27,23 +28,40 @@ interface MenuSectionProps {
 const MenuSection = ({ title, emoji, subtitle, items, borderColor }: MenuSectionProps) => (
   <motion.div
     variants={popIn}
-    className={`card-cazuela border-l-4 ${borderColor}`}
+    className={`
+      relative 
+      overflow-hidden 
+      card-cazuela 
+      border-l-4 ${borderColor}
+    `}
   >
-    <h3 className="font-display text-2xl font-bold mb-1">
-      {emoji} {title}
-    </h3>
-    <p className="text-muted-foreground mb-4 font-accent">{subtitle}</p>
-    <ul className="space-y-2">
-      {items.map((item) => (
-        <li key={item} className="flex items-center gap-2">
-          <Check size={16} className="text-primary flex-shrink-0" />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
+    {/* TEXTURA */}
+    <div
+      className="absolute inset-0 opacity-10 bg-cover bg-center pointer-events-none"
+      style={{ backgroundImage: `url(${textura})` }}
+    ></div>
+
+    {/* CONTENIDO */}
+    <div className="relative z-10">
+      <h3 className="font-display text-2xl font-bold mb-1">
+        {emoji} {title}
+      </h3>
+
+      <p className="text-muted-foreground mb-4 font-accent">
+        {subtitle}
+      </p>
+
+      <ul className="space-y-2">
+        {items.map((item) => (
+          <li key={item} className="flex items-center gap-2">
+            <Check size={16} className="text-primary flex-shrink-0" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   </motion.div>
 );
-
 const meats = [
   "Steak", "Chicken", "Al Pastor", "Adobada", "Carnitas",
   "Chicken with mole", "Chicken tinga", "Shredded beef",
