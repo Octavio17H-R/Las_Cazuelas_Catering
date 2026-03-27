@@ -89,7 +89,7 @@ const HomePage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...spring, delay: 0.1 }}
           >
-            Authentic Mexican Catering
+            Mexican Food Catering
           </motion.h1>
 
           {/* SUBTITULO */}
@@ -232,7 +232,7 @@ const HomePage = () => {
       {/* CTA */}
       <section className="section-padding bg-secondary text-center">
         <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-          Ready for the best tacos of your life?
+          Ready for the best Mexican food of your life?
         </h2>
 
         <p className="text-lg text-muted-foreground mb-8">
